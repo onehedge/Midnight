@@ -7,8 +7,8 @@
 // @run-at      document-idle
 // @grant       none
 // @noframes
-// @updateURL   https://raw.githubusercontent.com/onehedge/Midnight/refs/heads/main/mine.js
-// @downloadURL https://raw.githubusercontent.com/onehedge/Midnight/refs/heads/main/mine.js
+// @updateURL   https://raw.githubusercontent.com/onehedge/Midnight/main/mine.js
+// @downloadURL https://raw.githubusercontent.com/onehedge/Midnight/main/mine.js
 // ==/UserScript==
 
 (function () {
