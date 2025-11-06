@@ -7,8 +7,8 @@
 // @run-at      document-idle
 // @grant       none
 // @noframes
-// @updateURL   [稍后在此处粘贴 Gist 的原始文件链接]
-// @downloadURL [稍后在此处粘贴 Gist 的原始文件链接]
+// @updateURL   https://raw.githubusercontent.com/onehedge/Midnight/refs/heads/main/wallet.js
+// @downloadURL https://raw.githubusercontent.com/onehedge/Midnight/refs/heads/main/wallet.js
 // ==/UserScript==
 
 (function () {
