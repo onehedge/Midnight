@@ -7,8 +7,8 @@
 // @run-at      document-idle
 // @grant       none
 // @noframes
-// @updateURL   https://raw.githubusercontent.com/onehedge/Midnight/refs/heads/main/wallet.js
-// @downloadURL https://raw.githubusercontent.com/onehedge/Midnight/refs/heads/main/wallet.js
+// @updateURL   https://raw.githubusercontent.com/onehedge/Midnight/main/wallet.js
+// @downloadURL https://raw.githubusercontent.com/onehedge/Midnight/main/wallet.js
 // ==/UserScript==
 
 (function () {
