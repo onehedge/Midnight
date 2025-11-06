@@ -16,7 +16,7 @@
 
     const TAG = "[ScavengerMineMinePage]";
     const HEARTBEAT_MS = 10 * 60 * 1000; // 10 minutes
-    const BOOT_GRACE_MS = 5000;         // 5 seconds wait after load
+    const BOOT_GRACE_MS = 10000;         // 10 seconds wait after load
     const START_WAIT_LOOPS = 16;        // ~8 seconds total wait for start confirmation
     const START_WAIT_STEPMS = 500;
     const RELOAD_GUARD_MS = 60 * 1000;  // 1 minute reload guard
