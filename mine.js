@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        ScavengerMine - 自动挖矿
 // @namespace   onehedge
-// @version     3.1.1
+// @version     3.1.1.1
 // @description Automatically maintains ScavengerMine uptime on the /mine page by starting the session and reloading if the next challenge time is zero.
 // @match       https://sm.midnight.gd/wizard/mine
 // @run-at      document-idle
