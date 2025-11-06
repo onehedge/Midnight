@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        ScavengerMine - 自动连接钱包
 // @namespace   onehedge
-// @version     1.0.7
+// @version     1.0.7.1
 // @description Automatically connects the first installed wallet and moves to the next step on the /wallet page, then forces a reload to trigger the mine script.
 // @match       https://sm.midnight.gd/wizard/wallet
 // @run-at      document-idle
