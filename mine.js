@@ -14,7 +14,7 @@
 (function () {
     'use strict';
 
-    const TAG = "[ScavengerMineMinePage]";
+    const TAG = "[🕛挖矿]";
     const HEARTBEAT_MS = 10 * 60 * 1000; // 10 minutes
     const BOOT_GRACE_MS = 10000;         // 10 seconds wait after load
     const START_WAIT_LOOPS = 16;        // ~8 seconds total wait for start confirmation
@@ -23,6 +23,13 @@
 
     let lastReloadAt = 0;
     let heartbeatCount = 0;
+
+    function getCurrentTime() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        return `${hours}:${minutes}`;
+    }
 
     // --- 辅助函数 (保持不变) ---
 
@@ -104,14 +111,16 @@
     // --- 逻辑1: 首次加载逻辑 (已修改) ---
 
     async function initialLoadLogic() {
-        console.log(`${TAG} ⏳ 页面加载成功开始 ${BOOT_GRACE_MS / 1000} 秒计时...`);
+        console.log(`${TAG} ⏳ ${getCurrentTime()}  页面加载成功开始 ${BOOT_GRACE_MS / 1000} 秒计时...`);
         await new Promise(r => setTimeout(r, BOOT_GRACE_MS));
 
         const challenge = checkNextChallengeTime();
         const started = isSessionStarted();
 
-        console.log(`${TAG} ⏱️ 首次加载 - 下次挑战时间状态: ${challenge.isZero ? '零' : '非零'} (${challenge.timeText})`);
-        console.log(`${TAG} 🟢 首次加载 - 开始按钮状态: ${started ? '已开始 (Stop session)' : '未开始 (Start session)'}`);
+        const sessionStatus = started ? '已开始 (Stop session)' : '未开始 (Start session)';
+        const challengeStatus = challenge.isZero ? '零' : '非零';
+        console.log(`${TAG} ⏱️ 首次加载状态: 下次挑战时间: ${challengeStatus} (${challenge.timeText}) | 会话: ${sessionStatus}`);
+        
 
         // 4. 当下次挑战时间为"非零"，且开始按钮状态为"未开始"，模拟点击开始按钮，直到开始按钮状态变为"已开始".
         if (!challenge.isZero && !started) {
@@ -127,13 +136,14 @@
 
     async function heartbeat() {
         heartbeatCount++;
-        console.log(`${TAG} 💖 开始第 ${heartbeatCount} 次心跳 (${HEARTBEAT_MS / 60000} 分钟周期)...`);
+        console.log(`${TAG} 💖 ${getCurrentTime()} 开始第 ${heartbeatCount} 次心跳 (${HEARTBEAT_MS / 60000} 分钟周期)...`);
 
         const challenge = checkNextChallengeTime();
         const started = isSessionStarted();
 
-        console.log(`${TAG} ⏱️ 心跳检查 - 下次挑战时间状态: ${challenge.isZero ? '零' : '非零'} (${challenge.timeText})`);
-        console.log(`${TAG} 🟢 心跳检查 - 开始按钮状态: ${started ? '已开始' : '未开始'}`);
+        const sessionStatus = started ? '已开始' : '未开始';
+        const challengeStatus = challenge.isZero ? '零' : '非零';
+        console.log(`${TAG} ⏱️ 心跳检查状态: 下次挑战时间: ${challengeStatus} (${challenge.timeText}) | 会话: ${sessionStatus}`);
 
 
         // 2. 如果下次挑战时间为零，则刷新网页。
