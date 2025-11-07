@@ -15,7 +15,7 @@
     'use strict';
 
     const TAG = "[🕛挖矿]";
-    const HEARTBEAT_MS = 10 * 60 * 1000; // 10 minutes
+    const HEARTBEAT_MS = 20 * 60 * 1000; // 10 minutes
     const BOOT_GRACE_MS = 10000;         // 10 seconds wait after load
     const START_WAIT_LOOPS = 16;        // ~8 seconds total wait for start confirmation
     const START_WAIT_STEPMS = 500;
